@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Counter from './components/Counter/Counter';
 
 function App() {
+
+  const handleOnAdd = (quantity) => {
+    console.log(`la cantidad agregada es: ${quantity}`)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+      <Navbar />
+      <ItemListContainer greeting='Bienvenido a compra online'/>
+      <Counter stock={10} onAdd={handleOnAdd}/>
     </div>
   );
 }
