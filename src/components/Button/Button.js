@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const Button = () => {
+const Button = (props) => {
 
     const handleClick = () => {
         console.log('hola')
@@ -16,11 +16,9 @@ const Button = () => {
         }
     }, [])
 
- 
-
-    return (
-        <button id='button'>Button</button>
-    )
+return <button id='button'>{props.label}</button>
+       
+    
 }
 
 export default Button
