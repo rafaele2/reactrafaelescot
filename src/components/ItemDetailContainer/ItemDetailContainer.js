@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 import { getProductsById } from '../../asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import {useParams} from 'react-router-dom'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState() 
+  const {productId} = useParams ()
+    
+
     useEffect (() => {
-      getProductsById ('1')
+      getProductsById (productId)
       .them (product => {
         setProduct(product)
       })

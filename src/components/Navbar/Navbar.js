@@ -2,6 +2,7 @@ import './Navbar.css'
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import Button from '../Button/Button'
+import { link} from 'react-router-dom'
 const Navbar = () => {
 
     const text = 'hice click'
@@ -13,13 +14,13 @@ const Navbar = () => {
 return (
         <nav className="Navbar">
             <div>
-                <h1>Ecommerce</h1>
+                <link to='/'>Ecommerce</link>
             </div>
             <div>
-                
-                <Button label='celulares' handleClick={handleClick} color='red'/>
-                <Button label='tablets'color='blue'/>
-                <Button label='notebooks'color='green'/>
+            
+                <link to='/cartegory/celular' label='celulares' handleClick={handleClick} color='red'></link>
+                <link to='/cartegory/tablet' label='tablets' handleClick={handleClick} color='red'></link>
+                <link to='/cartegory/notebook' label='nootbooks' handleClick={handleClick} color='red'></link>
             </div>
             <CartWidget />
         </nav>
